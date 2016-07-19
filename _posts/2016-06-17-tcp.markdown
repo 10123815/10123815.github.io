@@ -1,0 +1,17 @@
+---
+layout:     post
+title:      "TCP协议通信流程"
+date:       2016-06-17
+author:     "ysd"
+header-img: "img/post-bg-2015.jpg"
+tags:      
+        - tcp
+---
+
+![](/img/in-post/2016-06-17-tcp.jpg)
+
++ connect()发出SYN_SENT，并阻塞程序，等待应答；收到ACK后返回
++ listen()调用后，对于给定的监听套接口，内核要维护两个队列：
+    1. 已由客户发出并到达服务器，服务器正在等待完成相应的TCP三次握手过程
+    2. 已完成连接的队列
++ accept()从已完成连接队列返回第一个连接，如果已完成连接队列为空，则阻塞

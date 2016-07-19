@@ -1,0 +1,30 @@
+---
+layout:     post
+title:      "钢条切割"
+date:       2016-06-18
+author:     "ysd"
+header-img: "img/post-bg-2015.jpg"
+tags:      
+        - algorithm
+        - dp
+---
+
+>给一个长度为n的钢条，可将其切割成整数长度的几段（共2的n-1次方种切法，对于每个位置可选择切割或不切割）;
+长度i的钢条具有Pi的价格，如何切割（也可能不切割）能使得受益最大？<br/>
+
+设长度j的钢条最大收益`r[j]`，第一刀切割长度`s[j]`;<br/>
+对于子问题：切割长度j(j<=n)的钢条，假设第一刀切在i，i<=j,
+则此时的收益:<br/>
+`r[j] = max(Pi + r[j-i]), for i = 1 to j`<br/>
+因此为求得r[j],我们需要所有长度小于j的钢条的r
+
+```python
+def cut_rod (p, n):
+    r = [0] * (n + 1)
+    for j in xrange(1, n + 1):
+        q = -float('inf')
+        for i in xrange(1, j + 1):
+            q = max(q, p[i] + r[j - i])
+        r[j] = q
+    return r[n]
+```

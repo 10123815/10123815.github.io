@@ -1,0 +1,59 @@
+---
+layout:     post
+title:      "RAII"
+date:       2016-06-17
+author:     "ysd"
+header-img: "img/post-bg-2015.jpg"
+tags:      
+        - c++
+---
+
+#### Resource Acquisition Is Initialization.
+
+资源的有效期与持有(管理)资源的对象的生命期严格绑定:
+
++ 使用一个对象，在其构造时获取对应的资源；
++ 在对象生命期内控制对资源的访问，使之始终保持有效；
++ 最后在对象析构的时候，释放构造时获取的资源。
+
+资源不具有自动释放的功能，而C++中的类具有自动调用析构函数的功能。<br/>
+把资源用类进行封装起来，对资源操作都封装在类的内部，当定义的局部变量的生命结束时，它的析构函数就会自动的被调用，在析构函数中进行释放资源
+<br/>
+
+```cpp
+class FileHandle 
+{
+public:
+    FileHandle(char const* n, char const* a) 
+    {
+         p = fopen(n, a); 
+    }
+    
+    ~FileHandle() 
+    {
+         fclose(p); 
+    }
+private:
+    // 禁止拷贝操作
+    FileHandle (FileHandle const&);
+    FileHandle& operator= (FileHandle const&);
+    FILE *p;
+};
+```
+
+`FileHandle`类的构造函数调用`fopen()`获取资源。<br/>
+`FileHandle`类的析构函数调用`fclose()`释放资源。<br/>
+<br/>
+
+```cpp
+void Foo()
+{
+    FileHandle file1("n1.txt", "r"); 
+    FileHandle file2("n2.txt", "w");
+    Bar(); // 可能抛出异常
+    FileHandle file3("n3.txt", "rw")
+}
+```
+
+当`Foo()`调用`Bar()`时，局部对象`file1`和`file2`已经在`Foo`的函数调用栈中创建完毕，而`file3`却尚未创建。<br/>
+如果`Bar()`抛出异常，那么`file2`和`file1`的析构函数会被先后调用；由于此时栈中尚不存在`file3`对象，因此它的析构函数不会被调用。
