@@ -46,6 +46,7 @@ void operator delete(void* ptr) {
 }
 ```
 
+#### 定位new表达式
 可以在自定义`operator new`函数时提供额外的形参，此时使用这些自定义函数的new表达式必须使用new的定位形式
 
 ```c++
