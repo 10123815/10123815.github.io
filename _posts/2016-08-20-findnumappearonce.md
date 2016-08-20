@@ -38,13 +38,15 @@ _N_
 第一个子数组中每个数字的第
 _N_
 位都为1，
-而第二个子数组的每个数字的第_N_位都为0。
+而第二个子数组的每个数字的第
+_N_
+位都为0。
 
 现在我们已经把原数组分成了两个子数组，每个子数组都包含一个只出现一次的数字，而其它数字都出现了两次。
 
 ```c++
 void FindNumsAppearOnce(vector<int> data,int* num1,int *num2) {
-	int tmp = 0;
+    int tmp = 0;
     for (auto ele : data) {
         tmp ^= ele;
     }
