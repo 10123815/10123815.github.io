@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "POSIX 线程"
+title:      "POSIX 线程(1)"
 date:       2016-08-21
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
