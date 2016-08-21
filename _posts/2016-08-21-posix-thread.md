@@ -5,7 +5,6 @@ date:       2016-08-21
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
 tags:      
-        - 线程
         - linux
 ---
 
