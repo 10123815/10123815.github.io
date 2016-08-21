@@ -79,7 +79,30 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 
 + `pthread_mutex_lock`用于Lock Mutex，如果Mutex已经被Lock，该函数调用会Block直到Mutex被Unlock，然后该函数会Lock Mutex并返回。
 + `pthread_mutex_trylock`类似，只是当Mutex被Lock的时候不会Block，而是返回一个错误值EBUSY。
+
 -------------------------------------------------
 + 死锁
     + 线程对一个mutex加锁两次
     + 两个线程都在请求另一个线程拥有的资源
+
+#### 读写锁
+
++ 多个线程可以同时获得读锁(Reader-Writer lock in read mode)，
+但是只有一个线程能够获得写锁(Reader-writer lock in write mode)
++ 读写锁有三种状态
+    + 一个或者多个线程获得读锁，其他线程无法获得写锁，直到全读完，且随后的读锁请求都被阻塞
+    + 一个线程获得写锁，其他线程无法获得读＆写锁
+    + 没有线程获得此读写锁
+
+```cpp
+#include <pthread.h>
+int pthread_rwlock_init(
+       pthread_rwlock_t *restrict rwlock,
+       const pthread_rwlockattr_t *restrict attr) 
+int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);
+int pthread_rwlock_rdlock(pthread_rwlock_t *rwlock); 
+int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock); 
+int pthread_rwlock_unlock(pthread_rwlock_t *rwlock); 
+int pthread_rwlock_tryrdlock(pthread_rwlock_t *rwlock); 
+int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock);
+```
