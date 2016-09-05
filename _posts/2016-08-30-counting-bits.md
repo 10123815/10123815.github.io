@@ -21,7 +21,8 @@ Follow up:
 
 利用[或与加](https://10123815.github.io/2016/08/28/or&and/)中的
 _a + b = a \| b_             
-对每一个数 _n_，等于比其小的最大的2的指数 _a_ 与 _n - a_ 的和，此时 _n = a \| (n - a)_
+对每一个数 _n_，等于比其小的最大的2的指数 _a_ 与 _n - a_ 的和，此时 _n = a \| (n - a) = a + (n - a)_            
+所以有，_ans[n] = ans[a] + ans[n - a]_
 
 ```cpp
 class Solution {
