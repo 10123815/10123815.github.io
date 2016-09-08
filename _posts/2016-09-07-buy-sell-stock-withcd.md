@@ -16,6 +16,8 @@ Design an algorithm to find the maximum profit. You may complete as many transac
 + You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 + After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
 
+买股票系列，可以买卖多次，但卖完后要隔一天才能再买
+
 buy[i]表示在到第i天最后一个操作是买，此时的最大收益。                
 sell[i]表示在到第i天最后一个操作是卖，此时的最大收益。
 
