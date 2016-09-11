@@ -21,6 +21,8 @@ __水塘抽样__：水塘抽样是一系列的随机算法，
    若 r < k 則把水塘中的第r項換成S[j]項   
 ```    
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-$$ \prod _{ j=k }^{ n-1 }{ 1-\frac { 1 }{ j+1 }  } =\frac { k }{ n }  $$            
+下面证明每一项被抽取的概率均为 _k/n_:                           
+对于首先放入水塘的k项，其在遍历结束后任然留在水塘中的概率，即对于每个 _j ≥ k_ 的项，都不会替换它，为：   
+![](/img/in-post/2016-09-11-rs/small-than-k.png)
+对于每个 _j ≥ k_ 的项，其进入水塘，并且在遍历后留在水塘的概率为：
+![](/img/in-post/2016-09-11-rs/big-than-k.png)
