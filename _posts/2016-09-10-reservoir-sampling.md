@@ -26,3 +26,38 @@ __水塘抽样__：水塘抽样是一系列的随机算法，
 ![](/img/in-post/2016-09-11-rs/small-than-k.png)
 对于每个 _j ≥ k_ 的项，其进入水塘，并且在遍历后留在水塘的概率为：
 ![](/img/in-post/2016-09-11-rs/big-than-k.png)
+
+leetcode上的一道题：__Linked List Random Node__
+>Given a singly linked list, 
+return a random node's value from the linked list. Each node must have the same probability of being chosen.
+
+```cpp
+class Solution {
+public:
+    /** @param head The linked list's head.
+        Note that the head is guaranteed to be not null, so it contains at least one node. */
+    Solution(ListNode* head)
+        : head_(head) {
+        
+    }
+    
+    /** Returns a random node's value. */
+    int getRandom() {
+        auto node = head_;
+        int index = 0;
+        int ans = node->val;
+        while (node = node->next) {
+            int r = randab(0, ++index);
+            if (r == 0) {
+                ans = node->val;
+            }
+        }
+        return ans;
+    }
+private:
+    int randab(int a, int b) {
+        return (rand() % (b-a+1))+ a;
+    }
+    ListNode* head_;
+};
+```
