@@ -28,3 +28,25 @@ coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
 ```
 
 手贱点开了一道hard的题...
+
+```cpp
+class Solution {
+public:
+    typedef vector<vector<int>> DP;
+    int gao(vector<int>& nums, int beg, int end, DP& dp) {
+        if (dp[beg][end] > 0) return dp[beg][end];
+        for (int i = beg; i <= end; i++) {
+            dp[beg][end] = max(dp[beg][end], 
+            gao(nums, beg, i - 1, dp) + nums[beg - 1] * nums[i] * nums[end + 1] + gao(nums, i + 1, end, dp));
+        }
+        return dp[beg][end];
+    }
+    int maxCoins(vector<int>& nums) {
+        int n = nums.size();
+        nums.insert(nums.begin(), 1);
+        nums.insert(nums.end(), 1);
+        DP dp(n + 2, vector<int>(n + 2, 0));
+        return gao(nums, 1, n, dp);
+    }
+};
+```
