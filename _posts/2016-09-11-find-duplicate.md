@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Increasing Triplet Subsequence"
-date:       2016-09-06
+title:      "Find Duplicate"
+date:       2016-09-11
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
 tags:      

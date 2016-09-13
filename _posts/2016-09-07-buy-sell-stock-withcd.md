@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Best Time to Buy and Sell Stock with Cooldown"
-date:       2016-09-06
+date:       2016-09-07
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
 tags:      
