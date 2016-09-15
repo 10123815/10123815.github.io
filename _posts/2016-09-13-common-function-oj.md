@@ -9,6 +9,7 @@ tags:
 ---
 
 + 随机数
++ 
 ```cpp
 #include <stdlib.h>
 // 要取得[a,b)的随机整
@@ -20,6 +21,7 @@ tags:
 ```
 
 + string int 互转
++ 
 ```cpp
 #include <sstream>
 stringstream ss;
