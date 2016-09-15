@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "刷题时一些常用的函数"
+title:      "刷题常用"
 date:       2016-09-13
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
@@ -22,6 +22,7 @@ tags:
 
 + string int 互转
 + 
+
 ```cpp
 #include <sstream>
 stringstream ss;
