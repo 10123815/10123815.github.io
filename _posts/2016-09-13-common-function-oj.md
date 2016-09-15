@@ -21,33 +21,28 @@ tags:
 ```
 
 + string int 互转
-+ 
-
++            
 ```cpp
 #include <sstream>
 stringstream ss;
 int n;
 string str;
-
 // string to int
 str = "asdfasdfasdf";
 ss << str;
 ss >> n;
-
 // int to string
 n = 12312;
 ss << n;
 ss >> str;
-
-// 另外还可以用sprintf
+// sprintf
 #include <stdio.h>
 char buf[10];
 sprintf(buf, "%d", n);
-
-// 和sscanf
+// sscanf
 char str[] = "15.455";
 int i;
 float fp;
-sscanf(str, "%d", &i);         // 将字符串转换成整数   i = 15
-sscanf(str, "%f", &fp);      // 将字符串转换成浮点数 fp = 15.455000
+sscanf(str, "%d", &i);         // i = 15
+sscanf(str, "%f", &fp);      // fp = 15.455000
 ```
