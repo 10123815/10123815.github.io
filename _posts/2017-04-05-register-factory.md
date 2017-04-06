@@ -23,6 +23,7 @@ public:
         struct Register
         {
                 Register(unsigned int id) {
+                        // 内部类可以通过外部类的实例访问外部类的私有成员
                         ItemFactory::Instance().item_creators_[id] = []{
                                 // 只能注册无参的构造函数
                                 return new T;
