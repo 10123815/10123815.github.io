@@ -39,11 +39,11 @@ private:
         // id到构造函数的map
 };
 
-// 创建一个Register对象，类型是ItemFacory::Register<CLASS>，对象名_item_##CLASS##_，参数是KEY
-// 在Register的构造函数内部，实现了类型CLASS的构造函数的注册
+// 创建一个Register对象，类型是ItemFacory::Register<CLASS>，对象名_##CLASS##_，参数是KEY
+// 类型实例化过程中，在Register的构造函数内部，实现了类型CLASS的构造函数的注册
 // ##连接左右形成一个
 // 如果想使用带参数的构造函数，使用__VA_ARGS__
-#define REGISER_ITEM_CREATOR(CLASS, KEY) static ItemFacory::Register<CLASS> _item_##CLASS##_(KEY)
+#define REGISER_ITEM_CREATOR(CLASS, KEY) static ItemFacory::Register<CLASS> _##CLASS##_(KEY)
 
 // concrete_item.h
 
