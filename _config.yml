@@ -47,7 +47,7 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: _yanshidong_
 
 # Duoshuo settings
 # duoshuo_username: YSD Blog
@@ -81,5 +81,5 @@ featured-condition-size: 5              # A tag will be featured if the size of 
 
 # Friends
 friends: [
-    
+
 ]
