@@ -1,5 +1,6 @@
 ---
 layout:     post
+comments:   true
 title:      "c++自动注册工厂模式"
 date:       2017-04-05
 author:     "ysd"
