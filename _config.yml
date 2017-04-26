@@ -59,7 +59,7 @@ disqus_username: 10123815
 
 # Analytics settings
 # Baidu Analytics
-#ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+ba_track_id: 21bc10da5b318a94b535b4ddcfe062ef
 # Google Analytics
 ga_track_id: 'UA-75587443-2'            # Format: UA-xxxxxx-xx
 ga_domain: 10123815.github.io
