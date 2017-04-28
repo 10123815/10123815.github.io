@@ -2,7 +2,7 @@
 layout:     post
 comments:   true
 title:      "c++自动注册工厂模式"
-date:       2017-04-05
+date:       2017-04-28
 author:     "ysd"
 header-img: "img/post-bg-2015.jpg"
 tags:
