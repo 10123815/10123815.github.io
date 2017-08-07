@@ -12,10 +12,10 @@ tags:
 #### Hello World
 
 1. 创建btDefaultCollisionConfiguration，主要是内存管理
-2. 创建btCollisionDispatcher，为凸凸、凸凹的碰撞检测提供算法，并调用回调函数，用于传递碰撞信息？
+2. 创建btCollisionDispatcher，为凸凸、凸凹的碰撞检测提供算法，并提供调用回调函数，用于传递碰撞信息？
 3. 创建btBroadphaseInterface，里面应该包含一些粗略阶段的算法算法。Hello World中使用了btDbvtBroadphase。
   + btDbvt是一个可以快速动态更新的aabb树，看注释除了btDbvtBroadphase还能用在柔体碰撞检测，是一颗二叉树
-  + btDbvtBroadphase
+  + btDbvtBroadphase应该是递归的判断btDbvtNode的两个孩子是否有overlapping，有的话调碰撞处理函数？
 4. 创建btSequentialImpulseConstraintSolver，约束分析？不懂
 5. 创建物理世界并设置重力
 6. 创建一些刚体并加入物理世界。在这之前要创建碰撞体，碰撞体应该保存起来，并在刚体之间重用
