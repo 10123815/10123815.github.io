@@ -9,7 +9,8 @@ tags:
         - c++
 ---
 
-```cpp
+<pre>
+<code>
 
 /// factory.h ///
 
@@ -83,5 +84,3 @@ class HPPotion : public Item
 // 如果写在.h里可能会重复调用，重复创建同样id的对象
 // 以至于替换std::map中已存在的同样id的对象，而原来的对象将没有被delete而导致内存泄露
 REGISER_ITME(HPPotion, 145);
-
-```
