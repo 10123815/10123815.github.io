@@ -53,7 +53,7 @@ const btScalar*	vertices, const int* triangles, int ntriangles, bool randomizeCo
 		}
 #undef IDX
 
-		// 为每个三角形创建Face，用于柔体之间的碰撞检测，初始化了三角形的面积
+		// 为每个三角形创建Face，用于柔体之间的碰撞检测、柔体的受力等，初始化了三角形的面积
 
 		psb->appendFace(idx[0],idx[1],idx[2]);
 	}
